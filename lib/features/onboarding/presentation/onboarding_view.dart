@@ -127,7 +127,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   color: MColors.grey,
-                                  fontSize: 17, // كبرنا المقاس هنا
+                                  fontSize: 17,
                                   fontWeight: FontWeight.bold,
                                   height: 1.7,
                                 ),
@@ -199,7 +199,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                               textAlign: TextAlign.center,
                               style: const TextStyle(
                                 color: MColors.white,
-                                fontSize: 16, // وكبرنا المقاس جوه البوكس هنا كمان
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 height: 1.7,
                               ),
