@@ -3,8 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movie_app/features/login/presentation/login_view.dart';
 import 'core/localization/app_localizations.dart';
 
-// ننشئ متغير عام للحالة عشان نقدر نغير اللغة من زرار الأعلام
-ValueNotifier<Locale> appLocale = ValueNotifier(const Locale('en')); // اللغة الافتراضية إنجليزي مثلاً
+ValueNotifier<Locale> appLocale = ValueNotifier(const Locale('en'));
 
 void main() {
   runApp(const MyApp());
@@ -27,10 +26,7 @@ class MyApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: const [
-            Locale('en'),
-            Locale('ar'),
-          ],
+          supportedLocales: const [Locale('en'), Locale('ar')],
           locale: locale,
           builder: (context, child) {
             return Directionality(
