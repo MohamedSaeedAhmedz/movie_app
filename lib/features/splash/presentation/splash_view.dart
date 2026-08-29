@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/resources/app_Images.dart';
+import 'package:movie_app/core/resources/app_images.dart';
 import '../../../core/resources/app_colors.dart';
-import '../../onboarding/presentation/onboarding_view.dart';
-
+import '../../../core/routes/AppRoutes.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -18,10 +17,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 3), () {
       if (!mounted) return;
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const OnboardingView()),
-      );
+      Navigator.pushReplacementNamed(context, AppRoutes.onboarding);
     });
   }
 

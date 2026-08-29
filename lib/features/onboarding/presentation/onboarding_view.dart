@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/resources/app_colors.dart';
+import '../../../core/routes/AppRoutes.dart';
 
 class OnboardingItem {
   final String imagePath;
@@ -30,31 +31,36 @@ class _OnboardingViewState extends State<OnboardingView> {
     OnboardingItem(
       imagePath: 'assets/images/ON1.png',
       title: 'Find Your Next Favorite\nMovie Here',
-      description: 'Get access to a huge library of movies\nto suit all tastes. You will surely like it.',
+      description:
+          'Get access to a huge library of movies\nto suit all tastes. You will surely like it.',
       buttonText: 'Explore Now',
     ),
     OnboardingItem(
       imagePath: 'assets/images/ON2.png',
       title: 'Discover Movies',
-      description: 'Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.',
+      description:
+          'Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.',
       buttonText: 'Next',
     ),
     OnboardingItem(
       imagePath: 'assets/images/ON3.png',
       title: 'Explore All Genres',
-      description: 'Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.',
+      description:
+          'Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.',
       buttonText: 'Next',
     ),
     OnboardingItem(
       imagePath: 'assets/images/ON4.png',
       title: 'Create Watchlists',
-      description: 'Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.',
+      description:
+          'Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.',
       buttonText: 'Next',
     ),
     OnboardingItem(
       imagePath: 'assets/images/ON5.png',
       title: 'Rate, Review, and Learn',
-      description: 'Share your thoughts on the movies you\'ve watched. Dive deep into film details and help others discover great movies with your reviews.',
+      description:
+          'Share your thoughts on the movies you\'ve watched. Dive deep into film details and help others discover great movies with your reviews.',
       buttonText: 'Next',
     ),
     OnboardingItem(
@@ -82,10 +88,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           return Stack(
             fit: StackFit.expand,
             children: [
-              Image.asset(
-                page.imagePath,
-                fit: BoxFit.cover,
-              ),
+              Image.asset(page.imagePath, fit: BoxFit.cover),
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -103,7 +106,6 @@ class _OnboardingViewState extends State<OnboardingView> {
               Column(
                 children: [
                   const Spacer(),
-
                   if (_currentIndex == 0) ...[
                     SafeArea(
                       child: Padding(
@@ -140,7 +142,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: MColors.yellow,
                                   foregroundColor: MColors.black,
-                                  padding: const EdgeInsets.symmetric(vertical: 14),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 14,
+                                  ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -168,10 +172,10 @@ class _OnboardingViewState extends State<OnboardingView> {
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.fromLTRB(
-                          24,
-                          30,
-                          24,
-                          MediaQuery.of(context).padding.bottom + 20
+                        24,
+                        30,
+                        24,
+                        MediaQuery.of(context).padding.bottom + 20,
                       ),
                       decoration: const BoxDecoration(
                         color: MColors.black,
@@ -212,7 +216,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: MColors.yellow,
                                 foregroundColor: MColors.black,
-                                padding: const EdgeInsets.symmetric(vertical: 14),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 14,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -224,7 +230,10 @@ class _OnboardingViewState extends State<OnboardingView> {
                                     curve: Curves.easeInOut,
                                   );
                                 } else {
-                                  // TODO: Navigate to Login
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    AppRoutes.login,
+                                  );
                                 }
                               },
                               child: Text(
@@ -242,9 +251,14 @@ class _OnboardingViewState extends State<OnboardingView> {
                               width: double.infinity,
                               child: OutlinedButton(
                                 style: OutlinedButton.styleFrom(
-                                  side: const BorderSide(color: MColors.yellow, width: 1.5),
+                                  side: const BorderSide(
+                                    color: MColors.yellow,
+                                    width: 1.5,
+                                  ),
                                   foregroundColor: MColors.yellow,
-                                  padding: const EdgeInsets.symmetric(vertical: 14),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 14,
+                                  ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
