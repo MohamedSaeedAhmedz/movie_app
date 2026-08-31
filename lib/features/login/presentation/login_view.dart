@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
 import 'package:movie_app/core/localization/app_localizations.dart';
@@ -31,7 +32,7 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 const SizedBox(height: 10),
                 Image.asset(
-                  'assets/images/logo2.png',
+                  MImages.logo2,
                   width: 121,
                   height: 118,
                   fit: BoxFit.contain,
