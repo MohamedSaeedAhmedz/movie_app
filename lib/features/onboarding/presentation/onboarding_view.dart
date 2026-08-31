@@ -30,7 +30,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   final List<OnboardingItem> _pages = [
     OnboardingItem(
       imagePath: 'assets/images/ON1.png',
-      title: 'Find Your Next Favorite\nMovie Here',
+      title: 'Find Your Next\nFavorite Movie Here',
       description:
           'Get access to a huge library of movies\nto suit all tastes. You will surely like it.',
       buttonText: 'Explore Now',
