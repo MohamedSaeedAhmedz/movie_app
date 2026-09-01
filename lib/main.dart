@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:movie_app/utils/app_theme.dart';
 import 'package:movie_app/features/login/presentation/login_view.dart';
 import 'package:movie_app/features/onboarding/presentation/onboarding_view.dart';
 import 'package:movie_app/features/splash/presentation/splash_view.dart';
+import 'package:movie_app/features/update_profile/presentation/update_profile_screen.dart';
 import 'core/localization/app_localizations.dart';
 import 'core/routes/AppRoutes.dart';
 
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
       valueListenable: appLocale,
       builder: (context, locale, child) {
         return MaterialApp(
+          theme: AppTheme.appTheme,
           debugShowCheckedModeBanner: false,
           title: 'Movie App',
           localizationsDelegates: const [
@@ -42,6 +45,7 @@ class MyApp extends StatelessWidget {
             AppRoutes.splash: (context) => const SplashView(),
             AppRoutes.onboarding: (context) => const OnboardingView(),
             AppRoutes.login: (context) => const LoginView(),
+            AppRoutes.updateProfile: (context) => const UpdateProfileScreen(),
           },
         );
       },

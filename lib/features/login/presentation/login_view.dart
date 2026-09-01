@@ -3,6 +3,7 @@ import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
 import 'package:movie_app/core/localization/app_localizations.dart';
+import 'package:movie_app/core/routes/AppRoutes.dart';
 
 import '../../../main.dart';
 
@@ -121,7 +122,9 @@ class _LoginViewState extends State<LoginView> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                       Navigator.of(context).pushNamed(AppRoutes.updateProfile);
+                    },
                     child: Text(
                       loc.login,
                       style: const TextStyle(

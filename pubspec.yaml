@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.3.0
   icons_launcher: ^3.1.0
   intl: any
 
@@ -28,6 +29,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/svg/
 
 icons_launcher:
   image_path: "assets/images/icon.png"
