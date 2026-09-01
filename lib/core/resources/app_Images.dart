@@ -20,4 +20,15 @@ class MImages {
   static const String wn = "assets/images/wn.png";
   static const String placeholder = "assets/images/placeholder.png";
 
+  static const List<String> avatarList = [
+    "assets/images/Avatar1.png",
+    "assets/images/Avatar2.png",
+    "assets/images/Avatar3.png",
+    "assets/images/Avatar4.png",
+    "assets/images/Avatar5.png",
+    "assets/images/Avatar6.png",
+    "assets/images/Avatar7.png",
+    "assets/images/Avatar8.png",
+    "assets/images/Avatar9.png",
+  ];
 }
