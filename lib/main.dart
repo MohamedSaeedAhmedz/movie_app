@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:movie_app/core/resources/app_theme.dart';
+import 'package:movie_app/utils/app_theme.dart';
 import 'package:movie_app/features/login/presentation/login_view.dart';
 import 'package:movie_app/features/onboarding/presentation/onboarding_view.dart';
 import 'package:movie_app/features/splash/presentation/splash_view.dart';
