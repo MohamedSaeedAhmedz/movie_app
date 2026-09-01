@@ -274,8 +274,8 @@ class _LoginViewState extends State<LoginView> {
                             child: ClipOval(
                               child: Image.asset(
                                 isEnglish ? MIcons.en : MIcons.arabic,
-                                width: 27,
-                                height: 27,
+                                width: 27.0,
+                                height: 27.0,
                                 fit: BoxFit.cover,
                               ),
                             ),
