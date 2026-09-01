@@ -12,7 +12,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  icons_launcher: ^3.1.0
   intl: any
+
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +28,11 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+
+icons_launcher:
+  image_path: "assets/images/icon.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
