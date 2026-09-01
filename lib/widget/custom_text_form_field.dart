@@ -26,6 +26,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: AppTextStyle.font16W400.copyWith(color: MColors.white),
       cursorColor: MColors.yellow,
       validator: validator,
       obscureText: obscureText ?? false,
@@ -38,7 +39,7 @@ class CustomTextFormField extends StatelessWidget {
         filled: true,
         fillColor: MColors.dgrey,
         hintText: hintText,
-        hintStyle: AppTextStyle.font20W400.copyWith(color: MColors.white),
+        hintStyle: AppTextStyle.font16W400.copyWith(color: MColors.white),
         labelText: labelText,
         prefixIcon: Padding(
           padding: const EdgeInsets.only(left: 16),
