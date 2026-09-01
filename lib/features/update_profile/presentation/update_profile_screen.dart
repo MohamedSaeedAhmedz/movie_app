@@ -4,9 +4,11 @@ import 'package:movie_app/core/localization/app_localizations.dart';
 import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
+import 'package:movie_app/main.dart';
 import 'package:movie_app/utils/app_text_style.dart';
 import 'package:movie_app/widget/custom_button.dart';
 import 'package:movie_app/widget/custom_svg_pic.dart';
+import 'package:movie_app/widget/custom_text_button.dart';
 import 'package:movie_app/widget/custom_text_form_field.dart';
 
 class UpdateProfileScreen extends StatelessWidget {
@@ -24,7 +26,12 @@ class UpdateProfileScreen extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Container();
+                  },
+                );
               },
               child: ClipRRect(
                 child: Image.asset(MImages.avatar1, width: 150, height: 150),
@@ -40,6 +47,17 @@ class UpdateProfileScreen extends StatelessWidget {
               prefixIcon: CustomSvgPicture(svgPath: MIcons.phoneSvg),
               hintText: '01200000000',
             ),
+            Align(
+              alignment: appLocale.value == Locale('en')
+                  ? Alignment.centerLeft
+                  : Alignment.centerRight,
+              child: CustomTextButton(
+                onTap: () {},
+                text: l10n.resetPassword,
+                fontSize: 20,
+                color: MColors.white,
+              ),
+            ),
             Spacer(),
             CustomButton(
               onTap: () {},
@@ -54,7 +72,6 @@ class UpdateProfileScreen extends StatelessWidget {
               textStyle: AppTextStyle.font20W400.copyWith(color: MColors.black),
               color: MColors.yellow,
             ),
-            
           ],
         ),
       ),
