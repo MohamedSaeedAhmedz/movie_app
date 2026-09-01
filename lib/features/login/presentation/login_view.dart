@@ -249,8 +249,8 @@ class _LoginViewState extends State<LoginView> {
                                     opacity: isEnglish ? 0.4 : 1.0,
                                     child: Image.asset(
                                       MIcons.arabic,
-                                      width: 22,
-                                      height: 22,
+                                      width: 22.0,
+                                      height: 22.0,
                                     ),
                                   ),
                                 ],
