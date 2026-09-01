@@ -1,5 +1,5 @@
-class AppIcons {
-  AppIcons._();
+class MIcons {
+  MIcons._();
   static const String arabic = "assets/icons/ar.png";
   static const String barrow = "assets/icons/barrow.png";
   static const String call = "assets/icons/call.png";
@@ -23,4 +23,5 @@ class AppIcons {
   static const String play = "assets/icons/play.png";
   static const String save = "assets/icons/save.png";
   static const String saved = "assets/icons/saved.png";
+
 }

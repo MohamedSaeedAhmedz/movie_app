@@ -74,7 +74,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.black,
+      backgroundColor: MColors.black,
       body: PageView.builder(
         controller: _pageController,
         itemCount: _pages.length,
@@ -96,8 +96,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                     end: Alignment.bottomCenter,
                     colors: [
                       Colors.transparent,
-                      AppColors.black.withOpacity(0.4),
-                      AppColors.black.withOpacity(0.85),
+                      MColors.black.withOpacity(0.4),
+                      MColors.black.withOpacity(0.85),
                     ],
                     stops: const [0.4, 0.7, 1.0],
                   ),
@@ -116,7 +116,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                               page.title,
                               textAlign: TextAlign.center,
                               style: const TextStyle(
-                                color: AppColors.white,
+                                color: MColors.white,
                                 fontSize: 26,
                                 fontWeight: FontWeight.bold,
                                 height: 1.2,
@@ -128,7 +128,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                                 page.description,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                  color: AppColors.grey,
+                                  color: MColors.grey,
                                   fontSize: 17,
                                   fontWeight: FontWeight.bold,
                                   height: 1.7,
@@ -140,8 +140,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                               width: double.infinity,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.yellow,
-                                  foregroundColor: AppColors.black,
+                                  backgroundColor: MColors.yellow,
+                                  foregroundColor: MColors.black,
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 14,
                                   ),
@@ -178,7 +178,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         MediaQuery.of(context).padding.bottom + 20,
                       ),
                       decoration: const BoxDecoration(
-                        color: AppColors.black,
+                        color: MColors.black,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(32),
                           topRight: Radius.circular(32),
@@ -191,7 +191,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                             page.title,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
-                              color: AppColors.white,
+                              color: MColors.white,
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
@@ -202,7 +202,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                               page.description,
                               textAlign: TextAlign.center,
                               style: const TextStyle(
-                                color: AppColors.white,
+                                color: MColors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 height: 1.7,
@@ -214,8 +214,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                             width: double.infinity,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.yellow,
-                                foregroundColor: AppColors.black,
+                                backgroundColor: MColors.yellow,
+                                foregroundColor: MColors.black,
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 14,
                                 ),
@@ -252,10 +252,10 @@ class _OnboardingViewState extends State<OnboardingView> {
                               child: OutlinedButton(
                                 style: OutlinedButton.styleFrom(
                                   side: const BorderSide(
-                                    color: AppColors.yellow,
+                                    color: MColors.yellow,
                                     width: 1.5,
                                   ),
-                                  foregroundColor: AppColors.yellow,
+                                  foregroundColor: MColors.yellow,
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 14,
                                   ),
