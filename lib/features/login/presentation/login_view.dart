@@ -3,6 +3,7 @@ import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
 import 'package:movie_app/core/localization/app_localizations.dart';
+import 'package:movie_app/core/routes/AppRoutes.dart';
 
 import '../../../main.dart';
 
@@ -22,7 +23,7 @@ class _LoginViewState extends State<LoginView> {
     var loc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: MColors.black,
+      backgroundColor: AppColors.black,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
@@ -32,29 +33,29 @@ class _LoginViewState extends State<LoginView> {
               children: [
                 const SizedBox(height: 10),
                 Image.asset(
-                  MImages.logo2,
+                  AppImages.logo2,
                   width: 121,
                   height: 118,
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 69),
                 TextField(
-                  style: const TextStyle(color: MColors.white),
-                  cursorColor: MColors.yellow,
+                  style: const TextStyle(color: AppColors.white),
+                  cursorColor: AppColors.yellow,
                   decoration: InputDecoration(
                     prefixIcon: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Image.asset(
-                        MIcons.mail,
+                        AppIcons.mail,
                         width: 24,
                         height: 24,
-                        color: MColors.white,
+                        color: AppColors.white,
                       ),
                     ),
                     hintText: loc.email,
-                    hintStyle: const TextStyle(color: MColors.white),
+                    hintStyle: const TextStyle(color: AppColors.white),
                     filled: true,
-                    fillColor: MColors.dgrey,
+                    fillColor: AppColors.dgrey,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16),
                       borderSide: BorderSide.none,
@@ -64,16 +65,16 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(height: 16),
                 TextField(
                   obscureText: isPasswordHidden,
-                  style: const TextStyle(color: MColors.white),
-                  cursorColor: MColors.yellow,
+                  style: const TextStyle(color: AppColors.white),
+                  cursorColor: AppColors.yellow,
                   decoration: InputDecoration(
                     prefixIcon: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Image.asset(
-                        MIcons.lock,
+                        AppIcons.lock,
                         width: 24,
                         height: 24,
-                        color: MColors.white,
+                        color: AppColors.white,
                       ),
                     ),
                     suffixIcon: IconButton(
@@ -81,7 +82,7 @@ class _LoginViewState extends State<LoginView> {
                         isPasswordHidden
                             ? Icons.visibility_off
                             : Icons.visibility,
-                        color: MColors.white,
+                        color: AppColors.white,
                       ),
                       onPressed: () {
                         setState(() {
@@ -90,9 +91,9 @@ class _LoginViewState extends State<LoginView> {
                       },
                     ),
                     hintText: loc.password,
-                    hintStyle: const TextStyle(color: MColors.white),
+                    hintStyle: const TextStyle(color: AppColors.white),
                     filled: true,
-                    fillColor: MColors.dgrey,
+                    fillColor: AppColors.dgrey,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16),
                       borderSide: BorderSide.none,
@@ -106,7 +107,7 @@ class _LoginViewState extends State<LoginView> {
                     onPressed: () {},
                     child: Text(
                       loc.forgetPassword,
-                      style: const TextStyle(color: MColors.yellow),
+                      style: const TextStyle(color: AppColors.yellow),
                     ),
                   ),
                 ),
@@ -116,16 +117,18 @@ class _LoginViewState extends State<LoginView> {
                   height: 55,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: MColors.yellow,
+                      backgroundColor: AppColors.yellow,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.updateProfile);
+                    },
                     child: Text(
                       loc.login,
                       style: const TextStyle(
-                        color: MColors.black,
+                        color: AppColors.black,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -138,14 +141,14 @@ class _LoginViewState extends State<LoginView> {
                   children: [
                     Text(
                       loc.dontHaveAccount,
-                      style: const TextStyle(color: MColors.white),
+                      style: const TextStyle(color: AppColors.white),
                     ),
                     GestureDetector(
                       onTap: () {},
                       child: Text(
                         loc.createOne,
                         style: const TextStyle(
-                          color: MColors.yellow,
+                          color: AppColors.yellow,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -158,21 +161,21 @@ class _LoginViewState extends State<LoginView> {
                   child: Row(
                     children: [
                       const Expanded(
-                        child: Divider(color: MColors.yellow, thickness: 0.8),
+                        child: Divider(color: AppColors.yellow, thickness: 0.8),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12.0),
                         child: Text(
                           loc.or,
                           style: const TextStyle(
-                            color: MColors.yellow,
+                            color: AppColors.yellow,
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
                       const Expanded(
-                        child: Divider(color: MColors.yellow, thickness: 0.8),
+                        child: Divider(color: AppColors.yellow, thickness: 0.8),
                       ),
                     ],
                   ),
@@ -183,7 +186,7 @@ class _LoginViewState extends State<LoginView> {
                   height: 55,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: MColors.yellow,
+                      backgroundColor: AppColors.yellow,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -192,12 +195,12 @@ class _LoginViewState extends State<LoginView> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(MIcons.google, width: 28, height: 28),
+                        Image.asset(AppIcons.google, width: 28, height: 28),
                         const SizedBox(width: 8),
                         Text(
                           loc.loginWithGoogle,
                           style: const TextStyle(
-                            color: MColors.black,
+                            color: AppColors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -220,9 +223,9 @@ class _LoginViewState extends State<LoginView> {
                     width: 100,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: MColors.dgrey,
+                      color: AppColors.dgrey,
                       borderRadius: BorderRadius.circular(30),
-                      border: Border.all(color: MColors.yellow, width: 1.5),
+                      border: Border.all(color: AppColors.yellow, width: 1.5),
                     ),
                     child: Stack(
                       alignment: Alignment.center,
@@ -230,8 +233,8 @@ class _LoginViewState extends State<LoginView> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Image.asset(MIcons.en, width: 20, height: 20),
-                            Image.asset(MIcons.arabic, width: 20, height: 20),
+                            Image.asset(AppIcons.en, width: 20, height: 20),
+                            Image.asset(AppIcons.arabic, width: 20, height: 20),
                           ],
                         ),
                         AnimatedPositioned(
@@ -242,7 +245,7 @@ class _LoginViewState extends State<LoginView> {
                             height: 32,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: MColors.black.withOpacity(0.4),
+                              color: AppColors.black.withOpacity(0.4),
                             ),
                           ),
                         ),

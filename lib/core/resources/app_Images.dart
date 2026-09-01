@@ -1,5 +1,5 @@
-class MImages {
-  MImages._();
+class AppImages {
+  AppImages._();
 
   static const String branding = "assets/images/brand.png";
   static const String moviesLogo = "assets/images/icon.png";
@@ -19,5 +19,4 @@ class MImages {
   static const String an = "assets/images/an.png";
   static const String wn = "assets/images/wn.png";
   static const String placeholder = "assets/images/placeholder.png";
-
 }

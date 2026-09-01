@@ -24,7 +24,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MColors.black,
+      backgroundColor: AppColors.black,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 24.0),
