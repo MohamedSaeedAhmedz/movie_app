@@ -4,7 +4,6 @@ import 'package:movie_app/features/forget_password_screen/forget_password_screen
 import 'package:movie_app/utils/app_theme.dart';
 import 'package:movie_app/features/login/presentation/login_view.dart';
 import 'package:movie_app/features/onboarding/presentation/onboarding_view.dart';
-import 'package:movie_app/features/splash/presentation/splash_view.dart';
 import 'package:movie_app/features/update_profile/presentation/update_profile_screen.dart';
 import 'core/localization/app_localizations.dart';
 import 'core/routes/AppRoutes.dart';
@@ -41,13 +40,13 @@ class MyApp extends StatelessWidget {
               child: child!,
             );
           },
-          initialRoute: AppRoutes.splash,
+          initialRoute: AppRoutes.onboarding,
           routes: {
-            AppRoutes.splash: (context) => const SplashView(),
             AppRoutes.onboarding: (context) => const OnboardingView(),
             AppRoutes.login: (context) => const LoginView(),
             AppRoutes.updateProfile: (context) => const UpdateProfileScreen(),
-            AppRoutes.forgetPasswordScreen:(context) => const ForgetPasswordScreen()
+            AppRoutes.forgetPasswordScreen: (context) =>
+                const ForgetPasswordScreen(),
           },
         );
       },
