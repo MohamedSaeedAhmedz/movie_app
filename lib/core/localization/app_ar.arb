@@ -6,5 +6,12 @@
   "dontHaveAccount": "لا تمتلك حساب ؟ ",
   "createOne": "أنشئ حساباً",
   "or": "أو",
-  "loginWithGoogle": "التسجيل باستخدام جوجل"
+  "loginWithGoogle": "التسجيل باستخدام جوجل",
+  "pickAvatar": "اختيار الصورة",
+"deleteAccount": "حذف الحساب",
+"updateData": "تحديث البيانات",
+"resetPassword": "إعادة تعيين كلمة المرور",
+"forgetPasswordTitle": "نسيت كلمة المرور",
+"email": "البريد الإلكتروني",
+"verify_email": "تأكيد البريد الإلكتروني"
 }

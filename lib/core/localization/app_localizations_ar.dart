@@ -31,4 +31,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loginWithGoogle => 'التسجيل باستخدام جوجل';
+
+  @override
+  String get pickAvatar => 'اختيار الصورة';
+
+  @override
+  String get deleteAccount => 'حذف الحساب';
+
+  @override
+  String get updateData => 'تحديث البيانات';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get forgetPasswordTitle => 'نسيت كلمة المرور';
+
+  @override
+  String get verify_email => 'تأكيد البريد الإلكتروني';
 }

@@ -6,5 +6,12 @@
   "dontHaveAccount": "Don't Have Account ? ",
   "createOne": "Create One",
   "or": "OR",
-  "loginWithGoogle": "Login With Google"
+  "loginWithGoogle": "Login With Google",
+  "pickAvatar": "Pick Avatar",
+"deleteAccount": "Delete Account",
+"updateData": "Update Data",
+"resetPassword": "Reset Password",
+"forgetPasswordTitle": "Forget Password",
+"email": "Email",
+"verify_email": "Verify Email"
 }

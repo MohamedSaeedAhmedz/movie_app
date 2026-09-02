@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
 import 'package:movie_app/core/localization/app_localizations.dart';
-
-import '../../../main.dart';
+import 'package:movie_app/core/routes/AppRoutes.dart';
+import 'package:movie_app/core/bloc/locale/locale_bloc.dart';
+import 'package:movie_app/core/bloc/locale/locale_event.dart';
+import 'package:movie_app/core/bloc/locale/locale_state.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -15,7 +18,6 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   bool isPasswordHidden = true;
-  bool isEnglish = true;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +105,11 @@ class _LoginViewState extends State<LoginView> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).pushNamed(AppRoutes.forgetPasswordScreen);
+                    },
                     child: Text(
                       loc.forgetPassword,
                       style: const TextStyle(color: MColors.yellow),
@@ -121,7 +127,9 @@ class _LoginViewState extends State<LoginView> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.updateProfile);
+                    },
                     child: Text(
                       loc.login,
                       style: const TextStyle(
@@ -133,24 +141,28 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      loc.dontHaveAccount,
-                      style: const TextStyle(color: MColors.white),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        loc.createOne,
-                        style: const TextStyle(
-                          color: MColors.yellow,
-                          fontWeight: FontWeight.bold,
+                Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        loc.dontHaveAccount,
+                        style: const TextStyle(color: MColors.white),
+                      ),
+                      const SizedBox(width: 4),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          loc.createOne,
+                          style: const TextStyle(
+                            color: MColors.yellow,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 24),
                 Padding(
@@ -207,83 +219,96 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 24),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      isEnglish = !isEnglish;
-                    });
-                    appLocale.value = isEnglish
-                        ? const Locale('en')
-                        : const Locale('ar');
+                BlocBuilder<LocaleBloc, LocaleState>(
+                  builder: (context, state) {
+                    final bool isEnglish = state.locale.languageCode == 'en';
+
+                    return Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: GestureDetector(
+                        onTap: () {
+                          context.read<LocaleBloc>().add(
+                            ChangeLocaleEvent(
+                              isEnglish
+                                  ? const Locale('ar')
+                                  : const Locale('en'),
+                            ),
+                          );
+                        },
+                        child: SizedBox(
+                          width: 92.11,
+                          height: 37.89,
+                          child: Stack(
+                            alignment: Alignment.centerLeft,
+                            children: [
+                              Align(
+                                alignment: Alignment.center,
+                                child: Container(
+                                  width: 92.11,
+                                  height: 37.89,
+                                  decoration: BoxDecoration(
+                                    color: MColors.black,
+                                    borderRadius: BorderRadius.circular(18.94),
+                                    border: Border.all(
+                                      color: MColors.yellow,
+                                      width: 2,
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 10,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Image.asset(
+                                          MIcons.en,
+                                          width: 22,
+                                          height: 22,
+                                        ),
+                                        Image.asset(
+                                          MIcons.arabic,
+                                          width: 22.0,
+                                          height: 22.0,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              AnimatedPositioned(
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.easeInOut,
+                                left: isEnglish ? 0 : 53.45,
+                                child: Container(
+                                  width: 38.66,
+                                  height: 37.89,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: MColors.black,
+                                    border: Border.all(
+                                      color: MColors.yellow,
+                                      width: 3,
+                                    ),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: ClipOval(
+                                    child: Image.asset(
+                                      isEnglish ? MIcons.en : MIcons.arabic,
+                                      width: 27.0,
+                                      height: 27.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
                   },
-                  child: SizedBox(
-                    width: 92.11,
-                    height: 37.89,
-                    child: Stack(
-                      alignment: Alignment.centerLeft,
-                      children: [
-                        Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            width: 92.11,
-                            height: 37.89,
-                            decoration: BoxDecoration(
-                              color: MColors.black,
-                              borderRadius: BorderRadius.circular(18.94),
-                              border: Border.all(color: MColors.yellow, width: 2),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 10),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Opacity(
-                                    opacity: isEnglish ? 1.0 : 0.4,
-                                    child: Image.asset(
-                                      MIcons.en,
-                                      width: 22,
-                                      height: 22,
-                                    ),
-                                  ),
-                                  Opacity(
-                                    opacity: isEnglish ? 0.4 : 1.0,
-                                    child: Image.asset(
-                                      MIcons.arabic,
-                                      width: 22.0,
-                                      height: 22.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        AnimatedPositioned(
-                          duration: const Duration(milliseconds: 200),
-                          curve: Curves.easeInOut,
-                          left: isEnglish ? 0 : 53.45,
-                          child: Container(
-                            width: 38.66,
-                            height: 37.89,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: MColors.black,
-                              border: Border.all(color: MColors.yellow, width: 3),
-                            ),
-                            alignment: Alignment.center,
-                            child: ClipOval(
-                              child: Image.asset(
-                                isEnglish ? MIcons.en : MIcons.arabic,
-                                width: 27.0,
-                                height: 27.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ],
             ),
