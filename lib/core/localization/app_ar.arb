@@ -10,5 +10,8 @@
   "pickAvatar": "اختيار الصورة",
 "deleteAccount": "حذف الحساب",
 "updateData": "تحديث البيانات",
-"resetPassword": "إعادة تعيين كلمة المرور"
+"resetPassword": "إعادة تعيين كلمة المرور",
+"forgetPasswordTitle": "نسيت كلمة المرور",
+"email": "البريد الإلكتروني",
+"verify_email": "تأكيد البريد الإلكتروني"
 }
