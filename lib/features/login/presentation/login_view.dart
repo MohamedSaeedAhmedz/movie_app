@@ -3,6 +3,7 @@ import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
 import 'package:movie_app/core/localization/app_localizations.dart';
+import 'package:movie_app/core/routes/AppRoutes.dart';
 
 import '../../../main.dart';
 
@@ -141,7 +142,9 @@ class _LoginViewState extends State<LoginView> {
                       style: const TextStyle(color: MColors.white),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.register);
+                      },
                       child: Text(
                         loc.createOne,
                         style: const TextStyle(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:movie_app/features/login/presentation/login_view.dart';
 import 'package:movie_app/features/onboarding/presentation/onboarding_view.dart';
+import 'package:movie_app/features/register/presentation/register_view.dart';
 import 'package:movie_app/features/splash/presentation/splash_view.dart';
 import 'core/localization/app_localizations.dart';
 import 'core/routes/AppRoutes.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
             AppRoutes.splash: (context) => const SplashView(),
             AppRoutes.onboarding: (context) => const OnboardingView(),
             AppRoutes.login: (context) => const LoginView(),
+            AppRoutes.register:(context) => const RegisterView()
           },
         );
       },
