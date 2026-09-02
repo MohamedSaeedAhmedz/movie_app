@@ -1,0 +1,12 @@
+flutter_native_splash:
+  color: "#121312"
+  image: assets/images/logoX3.png
+  
+  
+
+  android_12:
+    image: assets/images/logoX3.png
+    icon_background_color: "#121312"
+    
+
+  web: false
