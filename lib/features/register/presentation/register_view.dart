@@ -3,6 +3,7 @@ import 'package:movie_app/core/localization/app_localizations.dart';
 import 'package:movie_app/core/resources/app_Images.dart';
 import 'package:movie_app/core/resources/app_colors.dart';
 import 'package:movie_app/core/resources/app_icons.dart';
+import 'package:movie_app/main.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -14,6 +15,7 @@ class RegisterView extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView> {
   bool isPasswordHidden = true;
   bool isConfirmPasswordHidden = true;
+  bool isEnglish = true;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +88,9 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
               ),
             ),
+
             SizedBox(height: 24),
+
             TextField(
               style: const TextStyle(color: MColors.white),
               cursorColor: MColors.yellow,
@@ -110,7 +114,9 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
               ),
             ),
+
             SizedBox(height: 24),
+
             TextField(
               obscureText: isPasswordHidden,
               style: const TextStyle(color: MColors.white),
@@ -146,7 +152,9 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
               ),
             ),
+
             SizedBox(height: 24),
+
             TextField(
               obscureText: isConfirmPasswordHidden,
               style: const TextStyle(color: MColors.white),
@@ -184,7 +192,9 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
               ),
             ),
+
             SizedBox(height: 24),
+
             TextField(
               keyboardType: TextInputType.phone,
               style: const TextStyle(color: MColors.white),
@@ -206,6 +216,103 @@ class _RegisterViewState extends State<RegisterView> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                   borderSide: BorderSide.none,
+                ),
+              ),
+            ),
+
+            SizedBox(height: 24),
+
+            SizedBox(
+              width: double.infinity,
+              height: 55,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: MColors.yellow,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                child: const Text(
+                  "Create Account",
+                  style: TextStyle(
+                    color: MColors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 18),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Already have an account?",
+                  style: TextStyle(
+                    color: MColors.white,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      color: MColors.yellow,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 18),
+            
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  isEnglish = !isEnglish;
+                });
+                appLocale.value = isEnglish
+                    ? const Locale('en')
+                    : const Locale('ar');
+              },
+              child: Container(
+                width: 100,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: MColors.dgrey,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: MColors.yellow, width: 1.5),
+                ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(MIcons.en, width: 20, height: 20),
+                        Image.asset(MIcons.arabic, width: 20, height: 20),
+                      ],
+                    ),
+                    AnimatedPositioned(
+                      duration: const Duration(milliseconds: 200),
+                      left: isEnglish ? 4 : 54,
+                      child: Container(
+                        width: 38,
+                        height: 32,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: MColors.black.withOpacity(0.4),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
