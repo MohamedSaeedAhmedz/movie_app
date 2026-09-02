@@ -104,7 +104,11 @@ class _LoginViewState extends State<LoginView> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(
+                        context,
+                      ).pushNamed(AppRoutes.forgetPasswordScreen);
+                    },
                     child: Text(
                       loc.forgetPassword,
                       style: const TextStyle(color: MColors.yellow),
@@ -123,7 +127,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                     onPressed: () {
-                       Navigator.of(context).pushNamed(AppRoutes.updateProfile);
+                      Navigator.of(context).pushNamed(AppRoutes.updateProfile);
                     },
                     child: Text(
                       loc.login,

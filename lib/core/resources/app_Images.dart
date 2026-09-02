@@ -14,7 +14,7 @@ class MImages {
   static const String avatar7 = "assets/images/Avatar7.png";
   static const String avatar8 = "assets/images/Avatar8.png";
   static const String avatar9 = "assets/images/Avatar9.png";
-  static const String forgot = "assets/images/forgot.png";
+  static const String forgot = "assets/images/Forgot password-bro 1.png";
   static const String popcorn = "assets/images/popcorn.png";
   static const String an = "assets/images/an.png";
   static const String wn = "assets/images/wn.png";

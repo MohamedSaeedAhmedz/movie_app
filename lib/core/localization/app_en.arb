@@ -10,5 +10,8 @@
   "pickAvatar": "Pick Avatar",
 "deleteAccount": "Delete Account",
 "updateData": "Update Data",
-"resetPassword": "Reset Password"
+"resetPassword": "Reset Password",
+"forgetPasswordTitle": "Forget Password",
+"email": "Email",
+"verify_email": "Verify Email"
 }
