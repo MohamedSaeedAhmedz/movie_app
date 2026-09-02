@@ -12,6 +12,9 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
+  bool isPasswordHidden = true;
+  bool isConfirmPasswordHidden = true;
+
   @override
   Widget build(BuildContext context) {
     var loc = AppLocalizations.of(context)!;
@@ -22,7 +25,6 @@ class _RegisterViewState extends State<RegisterView> {
         backgroundColor: MColors.black,
         centerTitle: true,
         title: Text(
-          
           "Register",
           style: TextStyle(
             fontSize: 16,
@@ -35,31 +37,180 @@ class _RegisterViewState extends State<RegisterView> {
           icon: Image.asset(MIcons.barrow),
         ),
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CircleAvatar(
-                radius: 35,
-                backgroundImage: AssetImage(MImages.Avatar1),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  radius: 35,
+                  backgroundImage: AssetImage(MImages.Avatar1),
+                ),
+                CircleAvatar(
+                  radius: 60,
+                  backgroundImage: AssetImage(MImages.Avatar2),
+                ),
+                CircleAvatar(
+                  radius: 35,
+                  backgroundImage: AssetImage(MImages.Avatar3),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Text(
+              "Avatar",
+              style: const TextStyle(color: MColors.white, fontSize: 16),
+            ),
+            TextField(
+              style: const TextStyle(color: MColors.white),
+              cursorColor: MColors.yellow,
+              decoration: InputDecoration(
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(
+                    MIcons.name,
+                    width: 24,
+                    height: 24,
+                    color: MColors.white,
+                  ),
+                ),
+                hintText: "Name",
+                hintStyle: const TextStyle(color: MColors.white),
+                filled: true,
+                fillColor: MColors.dgrey,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide.none,
+                ),
               ),
-              CircleAvatar(
-                radius: 60,
-                backgroundImage: AssetImage(MImages.Avatar2),
+            ),
+            SizedBox(height: 24),
+            TextField(
+              style: const TextStyle(color: MColors.white),
+              cursorColor: MColors.yellow,
+              decoration: InputDecoration(
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(
+                    MIcons.mail,
+                    width: 24,
+                    height: 24,
+                    color: MColors.white,
+                  ),
+                ),
+                hintText: "Email",
+                hintStyle: const TextStyle(color: MColors.white),
+                filled: true,
+                fillColor: MColors.dgrey,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide.none,
+                ),
               ),
-              CircleAvatar(
-                radius: 35,
-                backgroundImage: AssetImage(MImages.Avatar3),
+            ),
+            SizedBox(height: 24),
+            TextField(
+              obscureText: isPasswordHidden,
+              style: const TextStyle(color: MColors.white),
+              cursorColor: MColors.yellow,
+              decoration: InputDecoration(
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(
+                    MIcons.lock,
+                    width: 24,
+                    height: 24,
+                    color: MColors.white,
+                  ),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    isPasswordHidden ? Icons.visibility_off : Icons.visibility,
+                    color: MColors.white,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      isPasswordHidden = !isPasswordHidden;
+                    });
+                  },
+                ),
+                hintText: "Password",
+                hintStyle: const TextStyle(color: MColors.white),
+                filled: true,
+                fillColor: MColors.dgrey,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide.none,
+                ),
               ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Text(
-            "Avatar",
-            style: const TextStyle(color: MColors.white, fontSize: 16),
-          ),
-        ],
+            ),
+            SizedBox(height: 24),
+            TextField(
+              obscureText: isConfirmPasswordHidden,
+              style: const TextStyle(color: MColors.white),
+              cursorColor: MColors.yellow,
+              decoration: InputDecoration(
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(
+                    MIcons.lock,
+                    width: 24,
+                    height: 24,
+                    color: MColors.white,
+                  ),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    isConfirmPasswordHidden
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                    color: MColors.white,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      isConfirmPasswordHidden = !isConfirmPasswordHidden;
+                    });
+                  },
+                ),
+                hintText: "Confirm Password",
+                hintStyle: const TextStyle(color: MColors.white),
+                filled: true,
+                fillColor: MColors.dgrey,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            ),
+            SizedBox(height: 24),
+            TextField(
+              keyboardType: TextInputType.phone,
+              style: const TextStyle(color: MColors.white),
+              cursorColor: MColors.yellow,
+              decoration: InputDecoration(
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(
+                    MIcons.call,
+                    width: 24,
+                    height: 24,
+                    color: MColors.white,
+                  ),
+                ),
+                hintText: "Phone Number",
+                hintStyle: const TextStyle(color: MColors.white),
+                filled: true,
+                fillColor: MColors.dgrey,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
